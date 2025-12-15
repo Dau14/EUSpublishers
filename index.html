@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUS Publishers | Professional Publishing & Language Services</title>
     <meta name="description" content="EUS Publishers offers professional copywriting, copyediting, proofreading, translation, design & layout, research support, and human capital training services.">
-    
+   
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+   
     <style>
         :root {
             --primary: #1a3a6e;
@@ -17,7 +17,7 @@
             --dark: #212529;
             --gray: #6c757d;
         }
-        
+       
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
@@ -25,7 +25,7 @@
             color: var(--dark);
         }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
+       
         /* Header & Navigation */
         header {
             background: var(--primary);
@@ -54,7 +54,7 @@
             transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--secondary); }
-        
+       
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(26,58,110,0.85), rgba(26,58,110,0.85)), url('https://images.unsplash.com/photo-1491841651911-c7957ed16e65?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');
@@ -84,7 +84,7 @@
             transition: all 0.3s;
         }
         .btn:hover { background: #f0c856; transform: translateY(-3px); }
-        
+       
         /* Main Content */
         .container {
             max-width: 1200px;
@@ -118,13 +118,13 @@
             font-size: 1.5rem;
         }
         .service-card p { color: var(--gray); }
-        
+       
         /* About */
         .about {
             background: var(--light);
             text-align: center;
         }
-        
+       
         /* Contact */
         .contact {
             background: var(--primary);
@@ -135,7 +135,52 @@
             color: var(--secondary);
             text-decoration: none;
         }
-        
+
+        /* Form Styles */
+        .contact form {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            display: grid;
+            gap: 1.5rem;
+            text-align: left;
+        }
+        .contact label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .contact input,
+        .contact select,
+        .contact textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .contact textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .contact .btn {
+            background: var(--secondary);
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            justify-self: center;
+            width: auto;
+        }
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+       
         /* Footer */
         footer {
             background: var(--dark);
@@ -144,7 +189,7 @@
             padding: 3rem 20px;
         }
         footer p { margin: 0; }
-        
+       
         /* Mobile Menu */
         .mobile-menu { display: none; }
         @media (max-width: 768px) {
@@ -153,10 +198,12 @@
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; }
         }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
-
     <!-- Header -->
     <header>
         <nav>
@@ -170,14 +217,12 @@
             <div class="mobile-menu">☰</div>
         </nav>
     </header>
-
     <!-- Hero -->
     <section id="home" class="hero">
         <h1>EUS Publishers</h1>
         <p>Excellence in Publishing, Language Services & Professional Development</p>
         <a href="#contact" class="btn">Get a Free Quote</a>
     </section>
-
     <!-- Services -->
     <section id="services" class="container">
         <h2>Our Services</h2>
@@ -216,39 +261,95 @@
             </div>
         </div>
     </section>
-
     <!-- About -->
     <section id="about" class="about container">
         <h2>About EUS Publishers</h2>
         <p style="max-width: 900px; margin: 0 auto; font-size: 1.1rem;">
-            EUS Publishers is a trusted partner for authors, researchers, organizations, and businesses seeking high-quality publishing and language services. 
-            With a team of experienced editors, writers, translators, designers, and trainers, we deliver excellence at every stage of your project — 
+            EUS Publishers is a trusted partner for authors, researchers, organizations, and businesses seeking high-quality publishing and language services.
+            With a team of experienced editors, writers, translators, designers, and trainers, we deliver excellence at every stage of your project —
             from concept to final publication and beyond.
         </p>
     </section>
-
     <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Let’s Work Together</h2>
+            <h2>Request a Free Quote</h2>
             <p style="font-size: 1.2rem; margin: 2rem 0;">
-                Ready to bring your project to life? Contact us today for a free consultation and quote.
+                Fill in the details below and we'll get back to you with a personalized quote as soon as possible.
             </p>
-            <p style="font-size: 1.5rem;">
-                <strong>Email:</strong> <a href="mailto:info@euspublishers.com">info@euspublishers.com</a><br><br>
-                <strong>Phone/WhatsApp:</strong> <a href="tel:+27832561666">+27 (83) 256-1666</a>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Replace YOUR_ACCESS_KEY_HERE with your actual key from web3forms.com -->
+                <input type="hidden" name="access_key" value="87cdb920-ff34-4fc8-86a4-28c566f8aecf">
+                
+                <!-- Optional: Redirect back to contact section after submission -->
+                <input type="hidden" name="redirect" value="#contact">
+
+                <!-- Service Dropdown -->
+                <div>
+                    <label for="service">Select Service *</label>
+                    <select name="Service" id="service" required>
+                        <option value="" disabled selected>Choose a service</option>
+                        <option>Copywriting</option>
+                        <option>Copyediting</option>
+                        <option>Proofreading</option>
+                        <option>Translation Services</option>
+                        <option>Copy Design & Layout</option>
+                        <option>Research Support</option>
+                        <option>Research Topic Conceptualization and Support</option>
+                        <option>Human Capital Development & Training</option>
+                    </select>
+                </div>
+
+                <!-- Full Name -->
+                <div>
+                    <label for="name">Full Name *</label>
+                    <input type="text" name="Full Name" id="name" required>
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" name="Phone Number" id="phone" required>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email">Email Address *</label>
+                    <input type="email" name="Email" id="email" required>
+                </div>
+
+                <!-- Optional Message -->
+                <div>
+                    <label for="message">Additional Details (optional)</label>
+                    <textarea name="Message" id="message" placeholder="Tell us more about your project..."></textarea>
+                </div>
+
+                <!-- Honeypot for spam protection (do not remove) -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <button type="submit" class="btn">Submit Request</button>
+
+                <div class="success-message" id="success">
+                    Thank you! Your quote request has been sent. We will contact you shortly.
+                </div>
+            </form>
+
+            <p style="margin-top: 3rem;">
+                Or email us directly: <a href="mailto:info.euspublishers@gmail.com">info.euspublishers@gmail.com</a>
             </p>
-            <a href="mailto:info@euspublishers.com" class="btn" style="background: white; color: var(--primary); margin-top: 2rem;">
-                Send Us a Message
-            </a>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 EUS Publishers. All rights reserved. | Excellence | Professionalism | Integrity</p>
     </footer>
 
+    <script>
+        // Show success message if redirected back with success parameter
+        if (window.location.hash === "#contact" && new URLSearchParams(window.location.search).get("success")) {
+            document.getElementById("success").style.display = "block";
+        }
+    </script>
 </body>
-
 </html>
